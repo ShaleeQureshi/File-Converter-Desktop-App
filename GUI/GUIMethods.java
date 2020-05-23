@@ -6,12 +6,11 @@ package GUI;
 * Description: This class contains methods that are used in all of the other GUI classes
 *
 * Method List: 
-* 1. void thankYouMsg() = This method thanks the user for using the program
-* 2. void errorMsg(final String error) = This method displays an error message
-* 3. ArrayList<String> readFile(final ArrayList<String> data, final File file) = This method reads from a textfile and returns an array of strings 
-* 4. JFrame frameSetter(final JFrame frame, final int x, final int y, final String title) = This method alters the JFrames and returns it
-* 5. JButton btnSetter(JButton btn) = This method alters the JButtons and returns it
-* 6. JMenuBar barSetter(JMenuBar menuBar, JMenu menu, JMenuItem[] items) = This method creates a menubar by adding its items to the menu and returns it
+* 1. showMsg(final String msg) = This method displays a message in a dialog box
+* 2. ArrayList<String> readFile(final ArrayList<String> data, final File file) = This method reads from a textfile and returns an array of strings 
+* 3. frameSetter(final JFrame frame, final int x, final int y) = This method alters the JFrames and returns it
+* 4. JButton btnSetter(final JButton btn) = This method alters the JButtons and returns it
+* 5. JMenuBar barSetter(final JMenuBar menuBar, final JMenu menu, final JMenuItem[] items) = This method creates a menubar by adding its items to the menu and returns it
 */
 
 // Import Statements
@@ -34,17 +33,10 @@ public class GUIMethods {
     // Global Variables 
     final private static Cursor handCursor = new Cursor(Cursor.HAND_CURSOR);
 
-    // This method thanks the user for using the program
-    public static void thankYouMsg() {
+    // This method displays a message in a dialog box
+    public static void showMsg(final String msg) {
 
-        JOptionPane.showMessageDialog(null, "Thank you for using File Converter!");
-
-    } // thankYouMsg Method
-
-    // This method displays an error message
-    public static void errorMsg(final String error) {
-
-        JOptionPane.showMessageDialog(null, error);
+        JOptionPane.showMessageDialog(null, msg);
 
     } // errorMsg Method
 
@@ -65,13 +57,13 @@ public class GUIMethods {
             return data;
 
         } catch (final Exception error) {
-            errorMsg(error.getMessage());
+            showMsg(error.getMessage());
             System.exit(error.hashCode());
         }
 
         return null;
 
-    }
+    } // readFile Method
 
     // This method alters the JFrames and returns it
     public static JFrame frameSetter(final JFrame frame, final int x, final int y) {

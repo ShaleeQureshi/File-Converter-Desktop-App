@@ -24,12 +24,12 @@ import GUI.GUIMethods;
 public class ChooserFrame implements ActionListener {
 
     private JButton btnContinue;
-    private JLabel lblSelect;
+    private final JLabel lblSelect;
     private JMenuBar menuBar;
     private final JMenu menu;
     private final JMenuItem[] items;
     private JFrame frameChooser;
-    private final JComboBox<Object> boxOptions;
+    private static JComboBox<Object> boxOptions;
     private ArrayList<String> listOptions;
     private final File file;
 
@@ -84,15 +84,33 @@ public class ChooserFrame implements ActionListener {
 
     } // Constructor
 
+    // Getter method to give the ConverterFrame class the selected choice
+    public static String getSelectedItem() {
+        return boxOptions.getSelectedItem().toString();
+    } // getSelectedItem method
+
     @Override
     public void actionPerformed(final ActionEvent e) {
 
         // If the user goes to File -> Exit the following will occur
         if (e.getSource() == items[1]) {
             frameChooser.dispose();
-            GUIMethods.thankYouMsg();
+            GUIMethods.showMsg("Thank you for using File Converter!");
             System.exit(0);
         }
+        // If the user presses the continue button the following will occur
+        else if (e.getSource() == btnContinue) {
+            // If the user selected an item they will proceed
+            if (!boxOptions.getSelectedItem().toString().isEmpty()) {
+                frameChooser.dispose();
+                new ConverterFrame();
+            }
+            // If the user did not select an item they will not proceed
+            else {
+                GUIMethods.showMsg("Please select an item to proceed!");
+            }
+        }
+    
 
     } // actionPerformed Method
 

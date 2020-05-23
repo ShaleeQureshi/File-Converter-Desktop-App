@@ -64,7 +64,7 @@ public class WelcomeFrame implements ActionListener {
         // If the user goes to File -> Exit the following will occur
         if (e.getSource() == items[1]) {
             frameWelcome.dispose();
-            GUIMethods.thankYouMsg();
+            GUIMethods.showMsg("Thank you for using File Converter");
             System.exit(0);
         }
         // If the user presses the welcome button the following will occur
