@@ -1,4 +1,4 @@
-package src.GUI.SubFrames;
+package src.GUI.MenuFrames;
 
 /*
 * Date: May 21, 2020

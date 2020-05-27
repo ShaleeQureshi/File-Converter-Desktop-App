@@ -24,8 +24,28 @@ public class Conversions {
 
     private static String converted = "ConvertedFile";
 
+    // This method checks which type of conversion needs to be done and will do it
+    public static void typeConversion(final String type, final String file) {
+        
+        // Checking to see the type of conversion the user wants
+
+        // If the conversion is pdf to doc the following will occur
+        if (type.equals("PDF")) {
+            System.out.println("A");
+
+            pdfToDoc(file);
+        }
+        // If the conversion is docx to pdf the following will occur
+        else if (type.equals("DOCX")) {
+            System.out.println("B");
+
+            docxToPdf(file);
+        }
+
+    } // typeConversion Method
+
     // This method converts a pdf file to a doc
-    public static boolean pdfToDoc(final String file) {
+    private static boolean pdfToDoc(final String file) {
 
         try {
 
@@ -44,14 +64,14 @@ public class Conversions {
     } // pdfToDoc Method
 
     // This method converts a docx file to a pdf
-    public static boolean docxToPdf(final String file) {
+    private static boolean docxToPdf(final String file) {
 
         try {
 
-            FileInputStream fileInputStream = new FileInputStream(file);
-            XWPFDocument doc = new XWPFDocument(fileInputStream);
-            PdfOptions pdfOptions = PdfOptions.create();
-            FileOutputStream out = new FileOutputStream(new File(converted + ".pdf"));
+            final FileInputStream fileInputStream = new FileInputStream(file);
+            final XWPFDocument doc = new XWPFDocument(fileInputStream);
+            final PdfOptions pdfOptions = PdfOptions.create();
+            final FileOutputStream out = new FileOutputStream(new File(converted + ".pdf"));
             PdfConverter.getInstance().convert(doc, out, pdfOptions);
 
             fileInputStream.close();

@@ -13,12 +13,13 @@ import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
-
-import src.GUI.Methods.GUIMethods;
 import javax.swing.JButton;
 import javax.swing.JFileChooser;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+
+import src.GUI.Methods.GUIMethods;
+import src.ConversionCode.Conversions;
 
 public class ConverterFrame implements ActionListener {
 
@@ -149,6 +150,13 @@ public class ConverterFrame implements ActionListener {
             } else {
                 GUIMethods.showMsg("File not selected!");
             }
+        }
+        // If the user wants to convert the file the following will occur
+        else if (e.getSource() == btnConvert) {
+
+            // type[0] represents the type of file we are converting from
+            Conversions.typeConversion(type[0], fileChooser.getSelectedFile().toString());
+
         }
 
     } // actionPerformed Method
