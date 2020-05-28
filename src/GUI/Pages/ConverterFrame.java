@@ -4,6 +4,9 @@ package src.GUI.Pages;
 * Date: May 21, 2020
 * Authors: Shahrukh Qureshi
 * Description: This class creates the Frame that will allow the user to import a file to convert (Third Page)
+*
+* Method List:
+* 1. void actionPerformed(final ActionEvent e) = Handles all events on JComponents
 */
 
 // Import Statements
@@ -31,7 +34,8 @@ public class ConverterFrame implements ActionListener {
     private final JMenu menu;
     private final JMenuItem[] items;
 
-    private final String[] type;
+    public final String[] type;
+    public final String selectedItem;
 
     // Void Constructor
     public ConverterFrame() {
@@ -62,7 +66,7 @@ public class ConverterFrame implements ActionListener {
         frameConvert.setJMenuBar(menuBar);
 
         // JLabel
-        final String selectedItem = ChooserFrame.getSelectedItem(); // Getting the item the user chose
+        selectedItem = ChooserFrame.getSelectedItem(); // Getting the item the user chose
         type = selectedItem.split(" ", 3); // Spliting it by the spaces
         lblChoose = new JLabel("<html><u>Please select a " + type[0] + " file to convert it to " + type[2]);
         lblSelectedItem = new JLabel();
@@ -152,10 +156,12 @@ public class ConverterFrame implements ActionListener {
             }
         }
         // If the user wants to convert the file the following will occur
-        else if (e.getSource() == btnConvert) {
+        else if (e.getSource() == btnConvert && lblSelectedItem.getText().length() != 0) {
 
+            frameConvert.dispose();
             // type[0] represents the type of file we are converting from
-            Conversions.typeConversion(type[0], fileChooser.getSelectedFile().toString());
+            Conversions.conversion(type[0], fileChooser.getSelectedFile().toString(),
+                    fileChooser.getCurrentDirectory().getAbsolutePath());
 
         }
 

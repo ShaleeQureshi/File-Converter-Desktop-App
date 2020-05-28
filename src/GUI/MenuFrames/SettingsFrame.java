@@ -8,6 +8,8 @@ package src.GUI.MenuFrames;
 
 public class SettingsFrame {
      
+    
+
     // Void Constructor
     public SettingsFrame() {
         

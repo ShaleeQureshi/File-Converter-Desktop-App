@@ -4,6 +4,10 @@ package src.GUI.Pages;
 * Date: May 21, 2020
 * Authors: Shahrukh Qureshi
 * Description: This class creates the Conversion Chooser Frame (Second Page)
+*
+* Method List:
+* 1. static String getSelectedItem() = Getter method to give the ConverterFrame class the selected choice
+* 2. void actionPerformed(final ActionEvent e) = Handles all events on JComponents
 */
 
 // Import Statements

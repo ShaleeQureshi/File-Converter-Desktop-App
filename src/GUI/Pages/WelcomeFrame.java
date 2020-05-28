@@ -4,6 +4,9 @@ package src.GUI.Pages;
 * Date: May 21, 2020
 * Authors: Shahrukh Qureshi
 * Description: This class creates the Welcome Frame (First Page)
+*
+* Method List: 
+* 1. void actionPerformed(final ActionEvent e) = Handles all events on JComponents
 */
 
 // Import Statements

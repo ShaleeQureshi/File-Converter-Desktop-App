@@ -293,6 +293,18 @@
         "Packages/Group 2/xml-apis-1.4.01.jar",
         "Packages/Group 2/xpp3-1.1.3.4-RC8.jar",
         "Packages/Group 2/xstream-1.1.3.jar",
-        "Packages/Group 2/aspose.pdf-20.5.jar"
+        "Packages/Group 2/aspose.pdf-20.5.jar",
+        "Assets/Group 1/commons-codec-1.10.jar",
+        "Assets/Group 1/curvesapi-1.04.jar",
+        "Assets/Group 1/fr.opensagres.poi.xwpf.converter.core-2.0.1.jar",
+        "Assets/Group 1/fr.opensagres.poi.xwpf.converter.pdf-2.0.1.jar",
+        "Assets/Group 1/fr.opensagres.xdocreport.itext.extension-2.0.1.jar",
+        "Assets/Group 1/itext-2.1.7.jar",
+        "Assets/Group 1/ooxml-schemas-1.3.jar",
+        "Assets/Group 1/poi-3.15-beta2.jar",
+        "Assets/Group 1/poi-ooxml-3.15-beta2.jar",
+        "Assets/Group 1/stax-api-1.0.1.jar",
+        "Assets/Group 1/xmlbeans-2.3.0.jar",
+        "Assets/Group 2/aspose.pdf-20.5.jar"
     ]
 }
