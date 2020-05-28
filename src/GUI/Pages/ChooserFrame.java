@@ -23,6 +23,8 @@ import java.awt.event.ActionListener;
 import java.io.File;
 import java.util.ArrayList;
 import java.awt.event.ActionEvent;
+
+import src.GUI.MenuFrames.SettingsFrame;
 import src.GUI.Methods.GUIMethods;
 
 public class ChooserFrame implements ActionListener {
@@ -48,7 +50,7 @@ public class ChooserFrame implements ActionListener {
         btnContinue = new JButton("Continue");
         btnContinue = GUIMethods.btnSetter(btnContinue);
 
-        // JLabel 
+        // JLabel
         lblSelect = new JLabel("<html><u>What File Conversion do you need?");
 
         // JMenuBar/JMenu/JMenuItem
@@ -66,7 +68,7 @@ public class ChooserFrame implements ActionListener {
         file = new File("./Documents/options.txt");
         listOptions = new ArrayList<String>();
         listOptions = GUIMethods.readFile(listOptions, file);
-        boxOptions = new JComboBox <Object> (listOptions.toArray());
+        boxOptions = new JComboBox<Object>(listOptions.toArray());
 
         // Location set with (x, y, width, height)
 
@@ -75,7 +77,7 @@ public class ChooserFrame implements ActionListener {
         btnContinue.addActionListener(this);
         frameChooser.add(btnContinue);
 
-        // JLabel 
+        // JLabel
         lblSelect.setBounds(45, 10, 220, 30);
         frameChooser.add(lblSelect);
 
@@ -96,8 +98,12 @@ public class ChooserFrame implements ActionListener {
     @Override
     public void actionPerformed(final ActionEvent e) {
 
+        // If the user goes to File -> Settings the following will occur
+        if (e.getSource() == items[0]) {
+            new SettingsFrame();
+        }
         // If the user goes to File -> Exit the following will occur
-        if (e.getSource() == items[1]) {
+        else if (e.getSource() == items[1]) {
             frameChooser.dispose();
             GUIMethods.showMsg("Thank you for using File Converter!");
             System.exit(0);
@@ -114,7 +120,6 @@ public class ChooserFrame implements ActionListener {
                 GUIMethods.showMsg("Please select an item to proceed!");
             }
         }
-    
 
     } // actionPerformed Method
 

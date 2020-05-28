@@ -17,6 +17,8 @@ import javax.swing.JMenuItem;
 import javax.swing.JButton;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
+import src.GUI.MenuFrames.SettingsFrame;
 import src.GUI.Methods.GUIMethods;
 
 public class WelcomeFrame implements ActionListener {
@@ -64,8 +66,12 @@ public class WelcomeFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
 
+        // If the user goes to File -> Settings the following will occur
+        if (e.getSource() == items[0]) {
+            new SettingsFrame();
+        }
         // If the user goes to File -> Exit the following will occur
-        if (e.getSource() == items[1]) {
+        else if (e.getSource() == items[1]) {
             frameWelcome.dispose();
             GUIMethods.showMsg("Thank you for using File Converter");
             System.exit(0);

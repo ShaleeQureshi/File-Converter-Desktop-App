@@ -21,6 +21,7 @@ import javax.swing.JFileChooser;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
+import src.GUI.MenuFrames.SettingsFrame;
 import src.GUI.Methods.GUIMethods;
 import src.ConversionCode.Conversions;
 
@@ -97,8 +98,12 @@ public class ConverterFrame implements ActionListener {
     @Override
     public void actionPerformed(final ActionEvent e) {
 
+        // If the user goes to File -> Settings the following will occur
+        if (e.getSource() == items[0]) {
+            new SettingsFrame();
+        }
         // If the user goes to File -> Back the following will occur
-        if (e.getSource() == items[1]) {
+        else if (e.getSource() == items[1]) {
 
             frameConvert.dispose();
             new ChooserFrame();

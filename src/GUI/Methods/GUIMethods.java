@@ -76,7 +76,6 @@ public class GUIMethods {
         frame.setLayout(null); // Setting layout to null so we can decide the JComponents location
         frame.setLocationRelativeTo(null); // Setting the windows location to the center of the display
         frame.setResizable(false); // Making it so the user cannot resize the JFrame windows
-        // frame.setIconImage(image);
         frame.setTitle(title);
 
         return frame; // Returning the frame
