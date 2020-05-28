@@ -1,0 +1,75 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Debug (Launch) - Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Main<File Converter (Desktop App)_b6bce09>",
+            "request": "launch",
+            "mainClass": "src.Main.Main",
+            "projectName": "File Converter (Desktop App)_b6bce09"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Buffering",
+            "request": "launch",
+            "mainClass": "Buffering"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-BusyAirField",
+            "request": "launch",
+            "mainClass": "BusyAirField"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-CEO",
+            "request": "launch",
+            "mainClass": "CEO"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-CityParking",
+            "request": "launch",
+            "mainClass": "CityParking"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-CityParkingGUI",
+            "request": "launch",
+            "mainClass": "CityParkingGUI"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Rocket",
+            "request": "launch",
+            "mainClass": "Rocket"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-decoder",
+            "request": "launch",
+            "mainClass": "decoder"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-encryption",
+            "request": "launch",
+            "mainClass": "encryption"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-FlappyBird",
+            "request": "launch",
+            "mainClass": "flappyBird.FlappyBird"
+        }
+    ]
+}
