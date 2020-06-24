@@ -38,7 +38,7 @@ public class SettingsFrame implements ListSelectionListener, ActionListener {
     private final String[] listItems = { "About", "Help" };
     private final JPanel[] panels;
     private final JLabel lblPanel0, lblPanel1;
-    private JButton btnGitHubPanel0, btnHowVidPanel1;
+    private JButton btnGitHubPanel0, btnWebsitePanel0, btnHowVidPanel1;
     private final Font lblFont = new Font("Arial", Font.PLAIN, 10);
     private final JList<String> list;
 
@@ -75,13 +75,18 @@ public class SettingsFrame implements ListSelectionListener, ActionListener {
         btnGitHubPanel0 = new JButton("GitHub");
         btnGitHubPanel0 = GUIMethods.btnSetter(btnGitHubPanel0);
         btnGitHubPanel0.addActionListener(this);
+        btnWebsitePanel0 = new JButton("Website");
+        btnWebsitePanel0 = GUIMethods.btnSetter(btnWebsitePanel0);
+        btnWebsitePanel0.addActionListener(this);
 
         // Location set with (x, y, width, height)
         panels[0].setLayout(null);
         lblPanel0.setBounds(10, 0, 200, 30);
         panels[0].add(lblPanel0);
-        btnGitHubPanel0.setBounds(37, 60, 150, 50);
+        btnGitHubPanel0.setBounds(37, 40, 150, 50);
         panels[0].add(btnGitHubPanel0);
+        btnWebsitePanel0.setBounds(37, 100, 150, 50);
+        panels[0].add(btnWebsitePanel0);
 
         // panels[1] components
         // JLabels
@@ -135,13 +140,15 @@ public class SettingsFrame implements ListSelectionListener, ActionListener {
     @Override
     public void actionPerformed(final ActionEvent e) {
 
-        // If the user presses the GitHub button on panel0 (About page) the following
-        // will occur
+        // If the user presses the GitHub button on panel0 (About page) the following will occur
         if (e.getSource() == btnGitHubPanel0) {
             browse("https://github.com/ShaleeQureshi");
         }
-        // If the user presses the How to Convert button on panel1 (Help page) the
-        // following will occur
+        // If the user presses the Website button on panel0 (About page) the following will occur
+        else if (e.getSource() == btnWebsitePanel0) {
+            browse("https://www.squreshi.net/home");
+        }
+        // If the user presses the How to Convert button on panel1 (Help page) the following will occur
         else if (e.getSource() == btnHowVidPanel1) {
             browse("https://www.youtube.com/watch?v=0LxDqWcNLIw");
         }
